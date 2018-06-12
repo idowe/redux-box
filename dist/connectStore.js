@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -8,9 +8,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.default = connectStore;
 
-var _reactRedux = require('react-redux');
+var _redux = require("@tarojs/redux");
 
-var _helpers = require('./helpers');
+var _helpers = require("./helpers");
 
 var attachModuleSelectors = function attachModuleSelectors(moduleInstance, stateObj, state, props) {
   var module = null;
@@ -20,7 +20,7 @@ var attachModuleSelectors = function attachModuleSelectors(moduleInstance, state
     module = moduleInstance;
   }
 
-  if (_typeof(module.selectors) == 'object') {
+  if (_typeof(module.selectors) == "object") {
     Object.keys(module.selectors).forEach(function (selector_name) {
       var selector = module.selectors[selector_name];
       stateObj[selector_name] = selector(state[module.name], state);
@@ -78,10 +78,10 @@ function connectStore(modules) {
     });
     return Object.assign({}, finalModule, ownProps);
   };
-  return (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, mergeProps, {
+  return (0, _redux.connect)(mapStateToProps, mapDispatchToProps, mergeProps, {
     pure: true,
     areStatePropsEqual: function areStatePropsEqual(a, b) {
       return (0, _helpers.areSame)(a, b);
     }
   });
-};
+}

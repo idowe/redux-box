@@ -1,6 +1,6 @@
 {
-  "name": "redux-box",
-  "version": "1.6.0",
+  "name": "redux-box-taro",
+  "version": "1.0.4",
   "description": "A redux container to scaffold a redux app as simple as possible while making perfect sense!",
   "main": "dist/index.js",
   "scripts": {
@@ -25,6 +25,7 @@
     "url": "https://github.com/anish000kumar/redux-box/issues"
   },
   "dependencies": {
+    "@tarojs/redux": "^0.0.46",
     "immer": "^0.8.4",
     "react": "^16.2.0",
     "react-redux": "^5.0.6",

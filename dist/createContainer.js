@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = createContainer;
 
-var _reactRedux = require("react-redux");
+var _redux = require("@tarojs/redux");
 
 /*
 	utility to access the store using render function
@@ -24,5 +24,5 @@ function createContainer(module) {
   var Container = function Container(props) {
     return props.children(props);
   };
-  return (0, _reactRedux.connect)(mapStateToProps, module.actions || {})(Container);
-};
+  return (0, _redux.connect)(mapStateToProps, module.actions || {})(Container);
+}

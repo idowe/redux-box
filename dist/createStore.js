@@ -9,11 +9,9 @@ var _composeEnhancers = require("./composeEnhancers");
 
 var _composeEnhancers2 = _interopRequireDefault(_composeEnhancers);
 
-var _reduxSaga = require("redux-saga");
+var _reduxSaga = require("redux-saga/dist/redux-saga");
 
 var _reduxSaga2 = _interopRequireDefault(_reduxSaga);
-
-var _effects = require("redux-saga/effects");
 
 var _reducer = require("./reducer");
 
@@ -35,7 +33,6 @@ function createStore(modules) {
   var _marked = /*#__PURE__*/regeneratorRuntime.mark(rootSaga);
 
   var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
 
   //Initialize middleware array
   var sagaMiddleware = (0, _reduxSaga2.default)();
@@ -86,7 +83,7 @@ function createStore(modules) {
 
             _context.prev = 1;
             _context.next = 4;
-            return (0, _effects.all)(sagas);
+            return (0, _reduxSaga.all)(sagas);
 
           case 4:
             _context.next = 11;
@@ -98,7 +95,7 @@ function createStore(modules) {
 
             sagaConfig.onError(_context.t0);
             _context.next = 11;
-            return (0, _effects.call)(_reduxSaga.delay, sagaConfig.retryDelay);
+            return (0, _reduxSaga.call)(_reduxSaga.delay, sagaConfig.retryDelay);
 
           case 11:
             _context.next = 0;
@@ -113,4 +110,4 @@ function createStore(modules) {
   }
   sagaMiddleware.run(rootSaga);
   return store;
-};
+}

@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = createSagas;
 
-var _effects = require("redux-saga/effects");
+var _reduxSaga = require("redux-saga/dist/redux-saga");
 
 /*
 	Syntactic sugar for easily accessing sagas
@@ -36,7 +36,7 @@ function createSagas(saga_list) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return (0, _effects.takeLatest)(action, worker_saga);
+                return (0, _reduxSaga.takeLatest)(action, worker_saga);
 
               case 2:
               case "end":
@@ -52,7 +52,7 @@ function createSagas(saga_list) {
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
-                return (0, _effects.takeEvery)(action, worker_saga);
+                return (0, _reduxSaga.takeEvery)(action, worker_saga);
 
               case 2:
               case "end":
@@ -65,4 +65,4 @@ function createSagas(saga_list) {
     arr.push(watcher());
   });
   return arr;
-};
+}
