@@ -1,4 +1,4 @@
-import { connect } from "@tarojs/redux";
+// import { connect } from "./connect";
 
 /*
 	utility to access the store using render function

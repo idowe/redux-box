@@ -2475,6 +2475,10 @@ needle@^2.2.0:
     iconv-lite "^0.4.4"
     sax "^1.2.4"
 
+nerv-redux@^1.2.18:
+  version "1.2.18"
+  resolved "https://registry.npmjs.org/nerv-redux/-/nerv-redux-1.2.18.tgz#b57372702c91d2ee06c6744eaf79601e55d0bb63"
+
 node-emoji@^1.4.1:
   version "1.8.1"
   resolved "http://registry.npm.taobao.org/node-emoji/download/node-emoji-1.8.1.tgz#6eec6bfb07421e2148c75c6bba72421f8530a826"

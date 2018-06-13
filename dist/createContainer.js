@@ -4,8 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = createContainer;
-
-var _redux = require("@tarojs/redux");
+// import { connect } from "./connect";
 
 /*
 	utility to access the store using render function

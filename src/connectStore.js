@@ -1,4 +1,4 @@
-import { connect } from "@tarojs/redux";
+import { connect } from "./connect";
 import { areSame, pluck } from "./helpers";
 
 const attachModuleSelectors = (moduleInstance, stateObj, state, props) => {

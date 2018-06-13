@@ -8,7 +8,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.default = connectStore;
 
-var _redux = require("@tarojs/redux");
+var _connect = require("./connect");
 
 var _helpers = require("./helpers");
 
@@ -78,7 +78,7 @@ function connectStore(modules) {
     });
     return Object.assign({}, finalModule, ownProps);
   };
-  return (0, _redux.connect)(mapStateToProps, mapDispatchToProps, mergeProps, {
+  return (0, _connect.connect)(mapStateToProps, mapDispatchToProps, mergeProps, {
     pure: true,
     areStatePropsEqual: function areStatePropsEqual(a, b) {
       return (0, _helpers.areSame)(a, b);
