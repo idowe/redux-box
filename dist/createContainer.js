@@ -11,18 +11,18 @@ var _redux = require("@tarojs/redux");
 	utility to access the store using render function
 */
 function createContainer(module) {
-  var mapStateToProps = function mapStateToProps(state) {
-    return state[module.name];
-  };
-  var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-    return Object.keys(module.actions).map(function (key) {
-      var action = module.actions[key];
-      return dispatch(action());
-    });
-  };
+  // const mapStateToProps = state => state[module.name];
+  // const mapDispatchToProps = dispatch => {
+  //   return Object.keys(module.actions).map(key => {
+  //     let action = module.actions[key];
+  //     return dispatch(action());
+  //   });
+  // };
 
-  var Container = function Container(props) {
-    return props.children(props);
-  };
-  return (0, _redux.connect)(mapStateToProps, module.actions || {})(Container);
+  // const Container = props => props.children(props);
+  // return connect(
+  //   mapStateToProps,
+  //   module.actions || {}
+  // )(Container);
+  return module;
 }

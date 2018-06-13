@@ -23,6 +23,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+var all = _reduxSaga.effects.all,
+    fork = _reduxSaga.effects.fork,
+    call = _reduxSaga.effects.call;
+
+
 /*
 Iterate through each module and keep stacking our reducers 
 and sagas in their respective arrays. Finally 
@@ -83,7 +88,7 @@ function createStore(modules) {
 
             _context.prev = 1;
             _context.next = 4;
-            return (0, _reduxSaga.all)(sagas);
+            return all(sagas);
 
           case 4:
             _context.next = 11;
@@ -95,7 +100,7 @@ function createStore(modules) {
 
             sagaConfig.onError(_context.t0);
             _context.next = 11;
-            return (0, _reduxSaga.call)(_reduxSaga.delay, sagaConfig.retryDelay);
+            return call(_reduxSaga.delay, sagaConfig.retryDelay);
 
           case 11:
             _context.next = 0;

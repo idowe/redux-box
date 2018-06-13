@@ -1,5 +1,6 @@
-import { takeLatest, takeEvery } from "redux-saga/dist/redux-saga";
-
+// import { takeLatest, takeEvery } from "redux-saga/dist/redux-saga";
+import { effects } from "redux-saga/dist/redux-saga";
+const { takeLatest, takeEvery } = effects;
 /*
 	Syntactic sugar for easily accessing sagas
 */

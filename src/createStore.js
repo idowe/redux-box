@@ -1,6 +1,7 @@
 import composeEnhancers from "./composeEnhancers";
 import createSagaMiddleware, { delay } from "redux-saga/dist/redux-saga";
-import { all, call } from "redux-saga/dist/redux-saga";
+import { effects } from "redux-saga/dist/redux-saga";
+const { all, fork, call } = effects;
 import getReducer from "./reducer";
 import {
   applyMiddleware,

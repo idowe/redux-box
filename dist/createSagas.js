@@ -7,9 +7,13 @@ exports.default = createSagas;
 
 var _reduxSaga = require("redux-saga/dist/redux-saga");
 
+var takeLatest = _reduxSaga.effects.takeLatest,
+    takeEvery = _reduxSaga.effects.takeEvery;
 /*
 	Syntactic sugar for easily accessing sagas
 */
+// import { takeLatest, takeEvery } from "redux-saga/dist/redux-saga";
+
 function createSagas(saga_list) {
   var arr = [];
   var GeneratorFunction = Object.getPrototypeOf( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
@@ -36,7 +40,7 @@ function createSagas(saga_list) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return (0, _reduxSaga.takeLatest)(action, worker_saga);
+                return takeLatest(action, worker_saga);
 
               case 2:
               case "end":
@@ -52,7 +56,7 @@ function createSagas(saga_list) {
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
-                return (0, _reduxSaga.takeEvery)(action, worker_saga);
+                return takeEvery(action, worker_saga);
 
               case 2:
               case "end":

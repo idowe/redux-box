@@ -1,6 +1,6 @@
 {
   "name": "redux-box-taro",
-  "version": "1.0.4",
+  "version": "1.0.9",
   "description": "A redux container to scaffold a redux app as simple as possible while making perfect sense!",
   "main": "dist/index.js",
   "scripts": {
